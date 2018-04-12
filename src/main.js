@@ -4,6 +4,10 @@ import App from './App'
 import router from './router'
 import 'buefy/lib/buefy.css'
 
+// Axios (HTTP Library)
+window.axios = require('axios')
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
 Vue.config.productionTip = false
 
 Vue.use(Buefy)

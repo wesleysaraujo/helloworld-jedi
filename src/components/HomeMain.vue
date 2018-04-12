@@ -10,15 +10,24 @@
       </div>
     </div>
     <div class="columns">
-      <div class="column is-12">
-        <search-planet></search-planet>
-      </div>
-    </div>
-    <div class="columns">
       <div class="column is-4 is-offset-4 is-primary">
-        <div class="container">
-          <h3>Olá</h3>
-        </div>
+        <nav class="panel">
+          <p class="panel-heading">
+            Escolha um planeta
+          </p>
+          <div class="panel-block">
+            <div class="control">
+              <search-planet @planetChosen="handlePlanets"></search-planet>
+            </div>
+          </div>
+          <div class="panel-block">
+            <carousel class="full-carousel" :paginationEnabled="planets.lenght > 1" :perPage="1" :perPageCustom="[[768, 1], [1024, 1]]" >
+              <slide class="full-slide" v-for="(planet, index) in planets" :key="index">
+                  <card-planet :planet="planet"></card-planet>
+              </slide>
+            </carousel>
+          </div>
+        </nav>
       </div>
     </div>
   </div>
@@ -26,13 +35,23 @@
 
 <script>
 import SearchPlanet from './SearchPlanet.vue'
+import CardPlanet from './CardPlanet.vue'
+import { Carousel, Slide } from 'vue-carousel'
+
 export default {
   name: 'HomeMain',
-  components: {SearchPlanet},
+  components: {SearchPlanet, CardPlanet, Carousel, Slide},
   data () {
     return {
       // msg: 'Encontre informações sobre os planetas dos filmes da franquia Star Wars'
-      msg: 'Busca API externa'
+      msg: 'Busca API externa',
+      planets: []
+    }
+  },
+  methods: {
+    handlePlanets (payload) {
+      console.log(payload)
+      this.planets = payload.planets
     }
   }
 }
@@ -48,5 +67,11 @@ export default {
   }
   .mb-3{
     margin-bottom: 3rem !important;
+  }
+  .full-carousel{
+    width: 100%;
+    .full-slide{
+      padding: 5px;
+    }
   }
 </style>

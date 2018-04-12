@@ -34,9 +34,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": "true",
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      //"Access-Control-Allow-Origin": "*",
+      //"Access-Control-Allow-Credentials": "true",
+      //"Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     },
     open: config.dev.autoOpenBrowser,
     overlay: config.dev.errorOverlay
