@@ -4,7 +4,7 @@
     <div class="hero is-light mb-2">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Hello World</h1>
+          <h1 class="title">Hello World Jedi</h1>
           <h2 class="subtitle">{{ msg }}</h2>
         </div>
       </div>
@@ -43,8 +43,7 @@ export default {
   components: {SearchPlanet, CardPlanet, Carousel, Slide},
   data () {
     return {
-      // msg: 'Encontre informações sobre os planetas dos filmes da franquia Star Wars'
-      msg: 'Busca API externa',
+      msg: 'Encontre informações sobre os planetas dos filmes da franquia Star Wars',
       planets: []
     }
   },
