@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="card" v-if="planet">
-      <div class="card-header is-center">
-        <h3 class="card-header-title">{{ planet.name }}</h3>
+      <div class="card-header">
+        <div class="card-header-title card-header-centered has-text-centered">
+          <span class="title">{{ planet.name }}</span>
+        </div>
       </div>
       <div class="card-content">
         <ul>
@@ -10,6 +12,9 @@
           <li><strong>Climate:</strong> {{ planet.climate}} </li>
           <li><strong>Terrain:</strong> {{ planet.terrain}} </li>
         </ul>
+        <hr>
+        <h4 class="subtitle  has-text-centered">Featured Films</h4>
+        <film-list :film-urls="planet.films"></film-list>
       </div>
     </div>
     <div class="notification is-warning" v-else>
@@ -20,8 +25,17 @@
 </template>
 
 <script>
+import FilmList from './FilmList.vue'
+
 export default {
   name: 'CardPlanet',
+  components: {FilmList},
   props: ['planet']
 }
 </script>
+
+<style lang="scss" scoped>
+  .card-header-centered {
+    display: block !important;
+  }
+</style>

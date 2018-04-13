@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="columns">
-      <div class="column is-4 is-offset-4 is-primary">
-        <nav class="panel">
+      <div class="column is-4 is-offset-4">
+        <nav class="panel has-white">
           <p class="panel-heading">
             Escolha um planeta
           </p>
@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     handlePlanets (payload) {
-      console.log(payload)
       this.planets = payload.planets
     }
   }

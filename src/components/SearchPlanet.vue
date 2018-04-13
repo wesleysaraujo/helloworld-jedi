@@ -3,7 +3,7 @@
     <b-field>
       <b-autocomplete
           rounded
-          v-model.lazy="searchTerm"
+          v-model="searchTerm"
           :data="filterDataPlanets"
           placeholder="exemp: Tatooine"
           icon="magnify"
@@ -22,7 +22,6 @@ export default {
   data () {
     return {
       searchTerm: '',
-      planetName: '',
       data: []
     }
   },
